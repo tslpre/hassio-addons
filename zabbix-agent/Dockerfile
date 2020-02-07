@@ -11,7 +11,7 @@ ENV LANG C.UTF-8
 # Install requirements for add-on
 RUN apk add --no-cache jq zabbix-agent
 
-RUN apk --no-cache add raspberrypi raspberrypi-libs usbutils shadow
+RUN apk --no-cache add raspberrypi raspberrypi-libs usbutils
 
 ##
 # Set symlinks for raspberry pi binaries.
