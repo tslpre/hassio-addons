@@ -1,13 +1,22 @@
-#!/usr/bin/env ash
+#!/bin/bash
+set -e
 
-# Extract config data
 CONFIG_PATH=/data/options.json
-ZABBIX_SERVER=$(jq --raw-output ".server" "$CONFIG_PATH")
-ZABBIX_HOSTNAME=$(jq --raw-output ".hostname" "$CONFIG_PATH")
+CUSTOM_CFG_PATH=/share/zabbix-agent
 
-# Update zabbix-agent config
-sed -i 's/^\(Server\(Active\)\?\)=.*/\1='"${ZABBIX_SERVER}"'/' /etc/zabbix/zabbix_agentd.conf
-sed -i 's/^\(Hostname\)=.*/\1='"${ZABBIX_HOSTNAME}"'/' /etc/zabbix/zabbix_agentd.conf
+SERVER=$(jq --raw-output ".server" $CONFIG_PATH)
+HOSTNAME=$(jq --raw-output ".hostname" $CONFIG_PATH)
 
-# Run zabbix-agent in foreground
-exec su zabbix -s /bin/ash -c "zabbix_agentd -f"
+if [ ! -d "$CUSTOM_CFG_PATH" ] ; then
+  mkdir -p "$CUSTOM_CFG_PATH"
+fi
+
+echo "
+Server=$SERVER
+ServerActive=$SERVER
+Hostname=$HOSTNAME
+LogType=console
+Include=${CUSTOM_CFG_PATH}/*.conf
+" > /etc/zabbix/zabbix_agentd.conf
+
+sudo -u zabbix zabbix_agentd -f
