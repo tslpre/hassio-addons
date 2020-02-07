@@ -20,4 +20,4 @@ Include=${CUSTOM_CFG_PATH}/*.conf
 " > /etc/zabbix/zabbix_agentd.conf
 
  exec su zabbix -s /bin/ash -c "zabbix_agentd -f"
- exec su root usermod -a -G video zabbix
+ exec su root -s /bin/ash -c "usermod -a -G video zabbix"
