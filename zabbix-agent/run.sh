@@ -19,4 +19,4 @@ LogType=console
 Include=${CUSTOM_CFG_PATH}/*.conf
 " > /etc/zabbix/zabbix_agentd.conf
 
- exec su zabbix -s /bin/ash -c "zabbix_agentd -f"
+ exec su zabbix -s /bin/ash -c "/usr/sbin/zabbix_agentd -f"
