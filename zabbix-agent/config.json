@@ -1,15 +1,32 @@
 {
-  "name": "zabbix-agent",
-  "version": "1.0",
-  "slug": "zabbix-agent",
-  "description": "Zabbix agent",
-  "startup": "system",
-  "boot": "auto",
-  "ports": {
-    "10050/tcp": 10050
-  },
-  "host_network": "true",
-  "image": "pschmitt/hassio-addon-{arch}-zabbix-agent",
-  "options": {"server": null, "hostname": "hassio"},
-  "schema": {"server": "str", "hostname": "str"}
+    "name": "Zabbix Agent",
+    "url": "https://git.asperti.com/paspo/hassio-addons",
+    "version": "0.1.2",
+    "slug": "zabbix-agent",
+    "description": "Zabbix Agent for hass.io",
+    "startup": "services",
+    "boot": "auto",
+    "audio": false,
+    "gpio": false,
+    "arch": [
+        "aarch64",
+        "amd64",
+        "armhf",
+        "i386",
+        "armv7"
+    ],
+    "ports": {
+        "10050/tcp": 10050
+    },
+    "map": [
+        "share"
+    ],
+    "options": {
+        "server": "zabbix-server",
+        "hostname": "hassio"
+    },
+    "schema": {
+        "server": "str",
+        "hostname": "str"
+    }
 }
