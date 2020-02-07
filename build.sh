@@ -28,7 +28,7 @@ addon_supported_arch() {
   # If arch is not set default to all
   if [[ $(jq .arch "${1}/config.json") == "null" ]]
   then
-    echo "all"
+    echo "armhf"
     return
   fi
   jq -r ".arch|@tsv" "${1}/config.json"
