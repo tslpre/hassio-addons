@@ -9,7 +9,9 @@ LABEL maintainer "Philipp Schmitt <philipp@schmitt.co>"
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN apk add --no-cache jq zabbix-agent raspberrypi raspberrypi-libs usbutils 
+RUN apk add --no-cache jq zabbix-agent raspberrypi raspberrypi-libs usbutils && \
+    echo http://dl-4.alpinelinux.org/alpine/v3.11/community/ >> /etc/apk/repositories && \
+    apk add --no-cache shadow
 #shadow && usermod -aG video zabbix
 
 ##
