@@ -9,9 +9,7 @@ LABEL maintainer "Philipp Schmitt <philipp@schmitt.co>"
 ENV LANG C.UTF-8
 
 # Install requirements for add-on
-RUN apk add --no-cache jq zabbix-agent
-
-RUN apk --no-cache add raspberrypi raspberrypi-libs usbutils shadow && usermod -aG video zabbix
+RUN apk add --no-cache jq zabbix-agent raspberrypi raspberrypi-libs usbutils shadow && usermod -aG video zabbix
 
 ##
 # Set symlinks for raspberry pi binaries.
