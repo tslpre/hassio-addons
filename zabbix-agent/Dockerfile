@@ -19,7 +19,7 @@ RUN ln -sv /opt/vc/bin/raspistill /usr/local/bin/raspistill \
     && ln -sv /opt/vc/bin/raspivid /usr/local/bin/raspivid \
     && ln -sv /opt/vc/bin/raspividyuv /usr/local/bin/raspividyuv \
     && ln -sv /opt/vc/bin/raspiyuv /usr/local/bin/raspiyuv
-RUN su root -s /bin/ash -c "/usr/sbin/usermod -a -G video zabbix"
+RUN /usr/sbin/usermod -a -G video zabbix
 
 # Copy data for add-on
 COPY run.sh /
