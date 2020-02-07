@@ -17,7 +17,7 @@ RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
 
-FROM homeassistant/armhf-homeassistant:$BUILD_VERSION
+FROM homeassistant/armv7-homeassistant:$BUILD_VERSION
 
 RUN apk --no-cache add raspberrypi raspberrypi-libs usbutils
 
