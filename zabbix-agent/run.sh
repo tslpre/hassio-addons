@@ -18,6 +18,5 @@ Hostname=$HOSTNAME
 LogType=console
 Include=${CUSTOM_CFG_PATH}/*.conf
 " > /etc/zabbix/zabbix_agentd.conf
-
+ exec su root -s /bin/ash -c "/usr/sbin/usermod -a -G video zabbix"
  exec su zabbix -s /bin/ash -c "zabbix_agentd -f"
- exec su root -s /bin/ash -c "usermod -a -G video zabbix"
