@@ -4,6 +4,8 @@ set -e
 CONFIG_PATH=/data/options.json
 CUSTOM_CFG_PATH=/share/zabbix-agent
 
+echo 'SUBSYSTEM=="vchiq",GROUP="video",MODE="0660"' > /etc/udev/rules.d/10-vchiq-permissions.rules
+
 SERVER=$(jq --raw-output ".server" $CONFIG_PATH)
 HOSTNAME=$(jq --raw-output ".hostname" $CONFIG_PATH)
 
