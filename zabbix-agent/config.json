@@ -8,10 +8,7 @@
     "boot": "auto",
     "audio": false,
     "gpio": false,
-    "devices": [
-        "/dev/vchiq:/dev/vchiq",
-        "/dev/dri:/dev/dri"
-    ],
+    "devices": ["/dev/vchiq:/dev/vchiq"],
     "arch": [
         "aarch64",
         "amd64",
