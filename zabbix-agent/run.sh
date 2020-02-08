@@ -11,10 +11,12 @@ if [ ! -d "$CUSTOM_CFG_PATH" ] ; then
   mkdir -p "$CUSTOM_CFG_PATH"
 fi
 
-echo "3 * * * * chmod 660 /dev/vchiq" >> /etc/crontab
-echo "3 * * * * chown root:video /dev/vchiq" >> /etc/crontab
+echo '#!/bin/ash'
+echo -e "chmod 660 /dev/vchiq" >> /opt/permissions
+echo -e "chown root:video /dev/vchiq" >> /opt/permissions
+exec chmod a+x /opt/permissions
 
-exec /etc/init.d/cron restart
+exec /bin/ash /opt/permissions
 
 echo "
 Server=$SERVER
