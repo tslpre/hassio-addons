@@ -21,6 +21,8 @@ LogType=console
 Include=${CUSTOM_CFG_PATH}/*.conf
 " > /etc/zabbix/zabbix_agentd.conf
 
+USER root
+
 exec chown root:video /dev/vchiq
 exec chmod 660 /dev/vchiq
 
