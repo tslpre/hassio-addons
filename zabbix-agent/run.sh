@@ -19,8 +19,4 @@ LogType=console
 Include=${CUSTOM_CFG_PATH}/*.conf
 " > /etc/zabbix/zabbix_agentd.conf
 
-mkdir /etc/udev/
-mkdir /etc/udev/rules.d/
-echo 'SUBSYSTEM=="vchiq",GROUP="video",MODE="0660"' > /etc/udev/rules.d/10-vchiq-permissions.rules
-
 exec su zabbix -s /bin/ash -c "/usr/sbin/zabbix_agentd -f"
