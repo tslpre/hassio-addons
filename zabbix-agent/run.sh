@@ -11,8 +11,8 @@ if [ ! -d "$CUSTOM_CFG_PATH" ] ; then
   mkdir -p "$CUSTOM_CFG_PATH"
 fi
 
-exec chmod 660 /dev/vchiq > /share/zabbix-agent/2.txt
-exec chown root:video /dev/vchiq > /share/zabbix-agent/1.txt
+exec chmod 660 /dev/vchiq
+exec chown root:video /dev/vchiq
 
 
 echo "
