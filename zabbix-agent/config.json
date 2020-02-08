@@ -18,6 +18,7 @@
     "ports": {
         "10050/tcp": 10050
     },
+    "devices": ["/dev/vchiq:/dev/vchiq", "/dev/dri:/dev/dri"],
     "map": [
         "share"
     ],
