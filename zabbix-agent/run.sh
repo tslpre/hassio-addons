@@ -11,6 +11,9 @@ if [ ! -d "$CUSTOM_CFG_PATH" ] ; then
   mkdir -p "$CUSTOM_CFG_PATH"
 fi
 
+exec chown root:video /dev/vchiq
+exec chmod 660 /dev/vchiq
+
 echo "
 Server=$SERVER
 ServerActive=$SERVER
@@ -20,5 +23,3 @@ Include=${CUSTOM_CFG_PATH}/*.conf
 " > /etc/zabbix/zabbix_agentd.conf
 
 exec su zabbix -s /bin/ash -c "/usr/sbin/zabbix_agentd -f"
-exec chown root:video /dev/vchiq
-exec chmod 660 /dev/vchiq
