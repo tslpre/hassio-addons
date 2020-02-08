@@ -11,8 +11,8 @@ if [ ! -d "$CUSTOM_CFG_PATH" ] ; then
   mkdir -p "$CUSTOM_CFG_PATH"
 fi
 
-exec echo '3 * * * * chmod 660 /dev/vchiq' >> /etc/crontab
-exec echo '3 * * * * chown root:video /dev/vchiq' >> /etc/crontab
+echo "3 * * * * chmod 660 /dev/vchiq" >> /etc/crontab
+echo "3 * * * * chown root:video /dev/vchiq" >> /etc/crontab
 
 echo "
 Server=$SERVER
