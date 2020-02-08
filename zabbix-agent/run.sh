@@ -11,9 +11,10 @@ if [ ! -d "$CUSTOM_CFG_PATH" ] ; then
   mkdir -p "$CUSTOM_CFG_PATH"
 fi
 
-echo '#!/bin/ash' > /opt/permissions
-echo -e "chmod 660 /dev/vchiq" >> /opt/permissions
-echo -e "chown root:video /dev/vchiq" >> /opt/permissions
+echo "#!/bin/ash" > /opt/permissions
+echo "chmod 660 /dev/vchiq" >> /opt/permissions
+echo "chown root:video /dev/vchiq" >> /opt/permissions
+
 exec chmod a+x /opt/permissions
 
 exec /bin/ash /opt/permissions
