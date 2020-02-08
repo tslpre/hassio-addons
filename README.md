@@ -1,6 +1,8 @@
 # hassio-addons
 hass.io addons by Philipp Schmitt
 
+forked as Zabbix Agent wasn't working with armv7 (and vcgencmd was not available to monitor Pi hardware).
+
 Add to Home Assistant using the repository url: 
 https://github.com/pschmitt/hassio-addons
 
