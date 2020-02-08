@@ -11,8 +11,6 @@ if [ ! -d "$CUSTOM_CFG_PATH" ] ; then
   mkdir -p "$CUSTOM_CFG_PATH"
 fi
 
-
-
 echo "
 Server=$SERVER
 ServerActive=$SERVER
