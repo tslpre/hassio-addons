@@ -12,9 +12,6 @@ RUN mkdir /etc/udev/ \
     && mkdir /etc/udev/rules.d/ \
     && echo 'SUBSYSTEM=="vchiq",GROUP="video",MODE="0660"' > /etc/udev/rules.d/10-vchiq-permissions.rules
 
-RUN chown root:video /dev/vchiq \
-    && chmod 660 /dev/vchiq
-
 # Install requirements for add-on
 RUN apk add --no-cache jq zabbix-agent raspberrypi raspberrypi-libs usbutils shadow && usermod -a -G video zabbix
 
