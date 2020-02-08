@@ -13,7 +13,7 @@ RUN mkdir /etc/udev/ \
     && echo 'SUBSYSTEM=="vchiq",GROUP="video",MODE="0660"' > /etc/udev/rules.d/10-vchiq-permissions.rules
 
 # Install requirements for add-on
-RUN apk add --no-cache jq zabbix-agent raspberrypi raspberrypi-libs usbutils shadow && usermod -a -G video zabbix
+RUN apk add --no-cache jq zabbix-agent raspberrypi raspberrypi-libs coreutils usbutils shadow && usermod -a -G video zabbix
 
 ##
 # Set symlinks for raspberry pi binaries.
