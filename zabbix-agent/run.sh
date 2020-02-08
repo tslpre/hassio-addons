@@ -15,9 +15,9 @@ echo "#!/bin/ash" > /opt/permissions
 echo "chmod 660 /dev/vchiq" >> /etc/zabbix/permissions
 echo "chown root:video /dev/vchiq" >> /etc/zabbix/permissions
 
-exec chmod a+rx /etc/zabbix/permissions
+#exec chmod a+rx /etc/zabbix/permissions
 
-exec /etc/zabbix/permissions
+#exec /etc/zabbix/permissions
 
 echo "
 Server=$SERVER
