@@ -15,7 +15,7 @@ echo "#!/bin/ash" > /opt/permissions
 echo "chmod 660 /dev/vchiq" >> /etc/zabbix/permissions
 echo "chown root:video /dev/vchiq" >> /etc/zabbix/permissions
 
-exec /bin/chmod a+rx /etc/zabbix/permissions
+/bin/chmod a+rx /etc/zabbix/permissions
 
 #exec /etc/zabbix/permissions
 
