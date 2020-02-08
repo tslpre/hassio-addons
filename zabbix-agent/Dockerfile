@@ -18,7 +18,7 @@ RUN ln -sv /opt/vc/bin/raspistill /usr/local/bin/raspistill \
     && ln -sv /opt/vc/bin/raspividyuv /usr/local/bin/raspividyuv \
     && ln -sv /opt/vc/bin/raspiyuv /usr/local/bin/raspiyuv
 
-RUN cp /share/zabbix-agent/10-vchiq-permissions.rules /etc/udev/rules.d/
+RUN cp /data/10-vchiq-permissions.rules /etc/udev/rules.d/
 
 ENV LD_LIBRARY_PATH=/opt/vc/lib:${LD_LIBRARY_PATH}
 
