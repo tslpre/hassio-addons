@@ -24,9 +24,6 @@ RUN ln -sv /opt/vc/bin/raspistill /usr/local/bin/raspistill \
 
 ENV LD_LIBRARY_PATH=/opt/vc/lib:${LD_LIBRARY_PATH}
 
-RUN chmod 660 /dev/vchiq
-RUN chown root:video /dev/vchiq
-
 # Copy data for add-on
 COPY run.sh /
 RUN chmod a+x /run.sh
