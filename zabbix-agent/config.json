@@ -9,7 +9,8 @@
     "audio": false,
     "gpio": false,
     "devices": [
-        "/dev/vchiq:/dev/vchiq"
+        "/dev/vchiq:/dev/vchiq:rwm",
+        "/dev/vhci:/dev/vhci:rwm"
     ],
     "arch": [
         "aarch64",
