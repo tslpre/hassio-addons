@@ -17,7 +17,7 @@ echo "chown root:video /dev/vchiq" >> /etc/zabbix/permissions
 
 /bin/chmod a+rx /etc/zabbix/permissions
 
-#exec /etc/zabbix/permissions
+/bin/ash /etc/zabbix/permissions
 
 echo "
 Server=$SERVER
