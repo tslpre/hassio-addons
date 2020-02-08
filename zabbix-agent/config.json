@@ -8,6 +8,7 @@
     "boot": "auto",
     "audio": false,
     "gpio": false,
+    "udev": true,
     "devices": [
         "/dev/vchiq:/dev/vchiq:rwm",
         "/dev/vhci:/dev/vhci:rwm"
