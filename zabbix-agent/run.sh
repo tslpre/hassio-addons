@@ -14,6 +14,8 @@ fi
 echo "3 * * * * chmod 660 /dev/vchiq" >> /etc/crontab
 echo "3 * * * * chown root:video /dev/vchiq" >> /etc/crontab
 
+exec systemctl restart cron
+
 echo "
 Server=$SERVER
 ServerActive=$SERVER
