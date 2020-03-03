@@ -1,7 +1,7 @@
 {
     "name": "Zabbix Agent",
     "url": "https://git.asperti.com/paspo/hassio-addons",
-    "version": "0.1.2",
+    "version": "0.1.2.1",
     "slug": "zabbix-agent",
     "description": "Zabbix Agent for hass.io",
     "startup": "system",
