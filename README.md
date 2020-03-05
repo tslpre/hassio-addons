@@ -43,7 +43,7 @@ Pilight server.
 
 ## zabbix-agent
 
-Zabbix agent.
+Zabbix agent with working vcgencmd and support for armv7 to allow installation on Raspberry Pi3/4
 
 ## zhue
 
